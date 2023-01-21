@@ -248,6 +248,10 @@ Para rodar ele só digitar:
 yarn jest --init
 ```
 
+```js
+yarn ts-jest -D
+```
+
 e ir repondendo as perguntas
 
 <hr>

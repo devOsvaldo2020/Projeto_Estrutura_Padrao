@@ -1,3 +1,4 @@
+
 1- Roda o typeorm: create -n CreateEntidade
 
 2- Att o UP e O DOWN criado, caminho "./database/migrations
@@ -17,4 +18,3 @@
 9- att a rota
 
 10- att o server
-

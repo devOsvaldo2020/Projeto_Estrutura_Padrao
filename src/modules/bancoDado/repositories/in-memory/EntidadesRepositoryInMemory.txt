@@ -1,0 +1,27 @@
+import { IEntidadesRepository, ICreateEntidadeDTO } from "../IEntidadesRepository";
+import { Entidade } from "../../entities/Entidade";
+
+class EntidadesRepositoryInMemory implements IEntidadesRepository{
+
+    entidades: Entidade[] = [];
+
+    async findByColumn (column: string) : Promise<Entidade> {
+        return this.entidades.find(entidade => entidade.column === column);          
+    }
+   
+    async list(): Promise<Entidade[]> {
+        const all = this.entidades;
+        retrun all;       
+    }
+    
+    async create({ column1, column2 }: ICreateEntidadeDTO): Promise<void> { // name, description
+        const entidade = new Entidade();
+
+        Object.assign(entidade, {
+            column1, column2
+        });
+        this.entidades.push(entidade);      
+    }
+}
+
+export { EntidadesRepositoryInMemory };

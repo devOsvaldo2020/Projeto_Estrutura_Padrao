@@ -1,0 +1,81 @@
+
+import { EntidadesRepositoryInMemory } from "./EntidadesRepositoryInMemory";
+import { CreateEntidadeUseCase } from "./CreateEntidadeUseCase";
+import { ICreateEntidadeDTO } from "../../dtos/ICreateEntidadeDTO";
+import { AppError } from "../../../../errors/AppError";
+
+let createEntidadeUseCase: CreateEntidadeUseCase;
+let entidadesRepositoryInMemory: EntidadesRepositoryInMemory;
+
+
+    describe("criar entidade, ()=>{
+
+    beforeEach(() => {
+        entidadesRepositoryInMemory = new EntidadesRepositoryInMemory();
+        createEntidadeUseCase = new CreateEntidadeUseCase(entidadesRepositoryInMemory
+        );
+    });
+
+    // novo teste
+    it("testando se é possivel criar uma entidade", async () => {
+        const entidade: ICreateEntidadeDTO = {
+            column1: "teste name entidade",
+            column2: "teste descricao entidade",
+        };
+        await createEntidadeUseCase.execute({
+            column1: entidade.column1,
+            column2: entidade.column2,
+        });
+
+        const entidadeCreate = await entidadesRepositoryInMemory.findByColumn(
+            entidade.column
+        );
+
+        expect(entidadeCreate).toHaveProperty("id")
+    }); // fim deste teste
+    
+    // novo teste
+    it("testando se o valor da coluna ja existe" , async () => {
+
+        expect(async () => {
+
+            const entidade: ICreateEntidadeDTO = {
+                column1: "teste entidade",
+                column2: "teste descricao entidade",
+            };
+
+            await createEntidadeUseCase.execute({
+                column1: entidade.column1,
+                column2: entidade.column2,
+            });
+
+            await createEntidadeUseCase.execute({
+                column1: entidade.column1,
+                column2: entidade.column2,
+            });
+
+        }).rejects.toBeInstanceOf(AppError);        
+    }); // fim deste teste
+
+
+// novo teste exemplo
+    it("testando se vai da error" , async () => {
+     expect(async () => {
+                   
+            const entidade: ICreateEntidadeDTO = {
+                column1: "9999",
+                column2: "email@email.com", // email
+                column3: "1234", // password
+                column4: "teste Error"
+            };
+
+            await createEntidadeUseCase.execute( entidade );        
+            await AuthenticateEntidadeUseCase.execute( {
+                email: user.email,
+                password: "incorrectPassWord"   
+            } );
+        }).rejects.toBeInstanceOf(AppError);
+    });
+
+
+// para roda digite: yarn test
