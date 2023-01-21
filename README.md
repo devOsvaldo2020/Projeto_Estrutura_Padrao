@@ -108,9 +108,9 @@ docker-compose up --force-recreate
 
 ## injeção de dependência
 
-### TSeringa
+### TSyringa
 
- - Um contêiner de injeção de dependência leve para TypeScript/JavaScript para injeção de construtor.
+- Descricao: TSyringe é uma biblioteca de injeção de dependência para TypeScript disponível no npm (Gerenciador de Pacotes Node). Ele fornece uma forma fácil e eficiente de gerenciar as dependências em aplicativos TypeScript, incluindo a capacidade de gerenciar dependências singleton e transientes. Ele também oferece suporte para construtores com múltiplos parâmetros e pode ser usado com qualquer framework JavaScript. A biblioteca TSyringe é mantida por uma comunidade ativa e é frequentemente atualizada para incluir novos recursos e correções de bugs [fonte](https://chat.openai.com/chat).
 
 
 👉 [TSyringe](https://www.npmjs.com/package/tsyringe?activeTab=readme)
@@ -127,7 +127,9 @@ yarn add tsyringe
 
 ### Bcrypt
 
- - Descricao: Faz a criptografia da senhas
+- Descricao: bcrypt é uma biblioteca de criptografia de senhas de fluxo de trabalho de hash de senha baseado em Blowfish. Ele é projetado para ser mais seguro do que outras bibliotecas de hash de senha, como o MD5 ou SHA-1, pois utiliza uma "custo" (cost) para aumentar o tempo de processamento e aumentar a segurança. A ideia é que, quanto maior o custo, mais difícil será para um atacante quebrar a senha criptografada. Outra vantagem do bcrypt é que ele gera uma "salt" (sal) aleatória para cada senha, o que significa que mesmo que duas senhas sejam iguais, as senhas criptografadas serão diferentes. Bcrypt é amplamente utilizado em aplicações web para armazenar senhas de forma segura e é uma boa escolha para aplicações que precisam de alta segurança.[fonte](https://chat.openai.com/chat)
+
+fonte: https://chat.openai.com
 
 
 👉 [bcrypt](https://www.npmjs.com/package/bcrypt)
@@ -146,6 +148,7 @@ npm install @types/bcript -D
 yarn add @types/bcript -D
 
 ```
+
 <hr>
 
 ## Biblioteca para autenticacao
@@ -157,12 +160,9 @@ yarn add @types/bcript -D
 
 👉 [JWT](https://jwt.io/)
 
-
-### JSONWEBTOKEN 
-
+### JSONWEBTOKEN
 
 👉 [jsonwebtoken - npm](https://www.npmjs.com/package/jsonwebtoken)
-
 
 ```jsx
 npm install jsonwebtoken
@@ -178,7 +178,7 @@ yarn add @types/jsonwebtoken -D
 
 ```
 
-### gerador de MD5 hash
+### Gerador de MD5 hash
 
 👉[MD5 qualquer](https://www.md5hashgenerator.com/)
 
@@ -189,18 +189,16 @@ saida: 7a21a6ec9cbba5b2995985f76edfec5c
 
 <hr>
 
-
-## Biblioteca para fazer que os erros sejam repassados.
+## Biblioteca para fazer que os erros sejam repassados
 
 ### express-async-errors
 
- - Descricao: É um módulo de Node.js que permite lidar com erros de forma assíncrona em aplicativos Express.
+- Descricao: É um módulo de Node.js que permite lidar com erros de forma assíncrona em aplicativos Express.
  Ele faz isso adicionando uma função de middleware ao Express que captura exceções não tratadas geradas por rotas assíncronas e
  garante que elas sejam tratadas corretamente. Isso ajuda a evitar que erros críticos sejam ignorados e causem falhas no aplicativo.
-
+ [fonte](https://chat.openai.com/chat)
 
 👉 [express-async-errors](https://www.npmjs.com/package/express-async-errors)
-
 
 ```jsx
 npm install express-async-errors --save
@@ -211,22 +209,19 @@ yarn add express-async-errors
 
 <hr>
 
-
-
-## Biblioteca para fazer os testes.
+## Biblioteca para fazer os testes
 
 ### JEST
 
- - Descricao: Jest é uma biblioteca de teste JavaScript criada pela Facebook. 
- Ele é projetado para ser fácil de usar e inclui recursos como testes automatizados de unidade, 
- cobertura de código e relatórios de teste. Jest também pode ser integrado com outras ferramentas 
- de teste, como Enzyme e Puppeteer, para testar aplicativos React e aplicativos web. Além disso, 
- Jest é compatível com a maioria dos principais gerenciadores de pacotes, como npm e yarn, e 
- pode ser usado com vários tipos de projetos, incluindo projetos Node.js e projetos de aplicativos 
- web.
+- Descricao: Jest é uma biblioteca de teste JavaScript criada pela Facebook. 
+   Ele é projetado para ser fácil de usar e inclui recursos como testes automatizados de unidade, 
+   cobertura de código e relatórios de teste. Jest também pode ser integrado com outras ferramentas 
+   de teste, como Enzyme e Puppeteer, para testar aplicativos React e aplicativos web. Além disso, 
+   Jest é compatível com a maioria dos principais gerenciadores de pacotes, como npm e yarn, e 
+   pode ser usado com vários tipos de projetos, incluindo projetos Node.js e projetos de aplicativos 
+   web.[fonte](https://chat.openai.com/chat)
 
-👉 [JEST](https://jestjs.io/pt-BR/docs/getting-started)
-
+👉 [JEST](https://jestjs.io/pt-BR/docs/getting-started).
 
 ```jsx
 npm install --save-dev jest
@@ -234,6 +229,14 @@ npm install --save-dev jest
 yarn add jest @types/jest -D
 
 ```
+
+Para rodar ele só digitar: 
+
+```js
+yarn jest --init
+```
+
+e ir repondendo as perguntas
 
 <hr>
 
