@@ -1,0 +1,17 @@
+import { Request, Response} from "express";
+import { container } from "tsyringe";
+
+import { ListEntidadesUseCase } from "./ListEntidadesUseCase";
+
+class ListEntidadesController {
+    async handle(request: Request, response: Response):Promise<Response> {
+
+    const listEntidadesUseCase = container.resolve(ListEntidadesUseCase);
+    
+        const all = await listEntidadesUseCase.execute();
+
+        return response.json(all)
+    }
+}
+
+export { ListEntidadesController };

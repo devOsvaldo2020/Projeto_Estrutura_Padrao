@@ -1,0 +1,153 @@
+// altere o tsconfig.json => resolveJsonModule": true, linha proximas de 70 [final do tsconfig]
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "RentalX Documentation",
+        "description": "this is an API Rent",
+        "version": "1.0.0",
+        "contact": {
+            "email": "myemail@gmail.com"
+        }
+    },
+    "paths": {
+        "/entidades": {
+            "post": {
+                "tags": [
+                    "Entidade"
+                ],
+                "sumary": "Create a entidade",
+                "description": "Create a new entidades",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "colum1": {
+                                        "type": "string"
+                                    },
+                                    "colum2:": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "entidade name sample",
+                                    "description": "entidade description sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Entidade already exists"
+                    }
+                }
+            },
+            "get": {
+                "tag": [
+                    "Entidade"
+                ],
+                "sumary": "list all entidades",
+                "description": "List all entidades",
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "colum1": {
+                                                "type": "string"
+                                            },
+                                            "colum2:": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Entidade already exists"
+                    }
+                }
+            }
+        },
+        "/entidade/import": {
+            "post": {
+                "tags": [
+                    "Entidade"
+                ],
+                "sumary": "upload a new entidade2",
+                "description": "Create a new entidades2",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }                   
+                }
+            }
+        },
+        "/entidades2": {
+            "post": {
+                "tags": [
+                    "Entidade2"
+                ],
+                "sumary": "Create a entidade2",
+                "description": "Create a new entidades2",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/entidade"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "500": {
+                        "description": "Entidade2 already exists"
+                    }
+                }
+            }
+        }
+    },
+    "definitoins": {
+        "Specifications": {
+            "type": "object",
+            "properties": {
+                "colum1": {
+                    "type": "string"
+                },
+                "colum2:": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

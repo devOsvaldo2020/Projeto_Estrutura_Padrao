@@ -1,0 +1,26 @@
+import {Column, CreateDateColumn, Entity, PrimaryColumn} from "typeorm";
+import { v4 as uuidV4} from "uuid;
+
+@Entity("entidades2")
+class Entidade2 {
+
+    @PrimaryColumn()
+    _id?: string;
+
+    @Column()   
+    colum1: string;
+
+    @Column()
+    colum2: string;   
+
+    @CreateDateColumn()
+    create_at: Date;
+
+    constructor() {
+        if (!this._id) {
+            this._id  = uuidV4();
+        }
+    }
+}
+
+export { Entidade2 };

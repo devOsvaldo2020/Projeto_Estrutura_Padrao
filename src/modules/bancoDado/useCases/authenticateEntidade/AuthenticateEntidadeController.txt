@@ -1,0 +1,27 @@
+
+
+
+import  { Request, Response} from "express";
+import { container } from "tsyringe";
+import { AuthenticateEntidadeUseCase } from "./AuthenticateEntidadeUseCase";
+
+
+class AuthenticateEntidadeController {   
+
+
+    async handle(request: Request, response: Response): Promise<Response> {
+        const { columnM, columnN } =  request.body; // password, email
+        
+        const authenticateEntidadeUseCase = container.resolve(AuthenticateEntidadeUseCase);
+
+        const token = await authenticateEntidadeUseCase.execute({ columnM, columnN});
+
+        return response.json(token);
+    }
+}
+
+export { AuthenticateEntidadeController };
+
+
+    // columnM: password, columnN: email
+

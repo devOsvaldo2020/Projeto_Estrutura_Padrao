@@ -1,0 +1,19 @@
+import { Router } from "express";
+import { authenticateRoutes} from "./authenticate.routes";
+
+import { entidadesRoutes } from "./routes/entidades.routes"; // entidade x1
+// ir add imports abaixo
+// import { entidades2Routes } from "./routes/entidades2.routes"; // entidade x2 [vai colocando a cada entidadeN]
+// import { entidades3Routes } from "./routes/entidades3.routes"; // entidade x2 [vai colocando a cada entidadeN]
+
+const router = Router();
+
+
+router.use("/entidades", entidadesRoutes); // entidade x1
+// ir add routes abaixo
+// router.use("/entidades2", entidades2Routes);  //entidade x2
+// router.use("/entidades3", entidades3Routes);  //entidade xn
+
+router.use(authenticateRoutes);
+
+export { router } ;

@@ -1,0 +1,13 @@
+import ( ICreateEntidadeDTO ) from " ../../dtos/ICreateEntidadeDTO";
+import { Entidade } from "./entities/Entidade";
+
+
+interface IEntidadesRepository {
+    findByName(column1: string):Promise<Entidade> ;
+    list(): Promise<Entidade[]>;
+    create({ column1, column2 }: ICreateEntidadeDTO): Promise<void>
+//  findByEmail(columnN: string): promise<Entidade>; // ex: coluna do email, nao esquecer de importar a entidade de entities 
+//  findById(_id: string): promise<Entidade>; // ex: coluna do _id, nao esquecer de importar a entidade de entities
+}
+
+export { IEntidadesRepository };

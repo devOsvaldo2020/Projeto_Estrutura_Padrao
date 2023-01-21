@@ -1,0 +1,43 @@
+
+
+
+
+import { Repository } from "typeorm';
+import ( ICreateEntidade2DTO ) from " ../../dtos/ICreateEntidade2DTO";
+import { Entidade2 } from "../../entities/Entidade2";
+
+import {
+    IEntidades2Repository,
+    ICreateEntidade2DTO,
+ } from "../interface/IEntidades2Repository";
+
+class Entidades2Repository implements IEntidades2Repository{    
+
+    private repository: Repository<Entidade2>;
+
+    contructor() {
+        this.repository = getRepository(Entidade2);
+    }    
+
+    async create({column2, column1 }: ICreateEntidade2DTO): Promise<void> {
+
+        const entidade2 = this.repository.create({
+           column2,
+           column1
+        })
+
+        await this.repository.save(entidade2)
+    }
+
+    async list(): Promise<Entidade2[]> {
+        const entidades2 = await this.repository.find();
+        return entidades2;
+    }
+
+    async findByName(column1: string): Promise<Entidade2> {
+        const entidade2 = await this.repository.findOne( { column1 });
+        return entidade2;
+    }
+}
+
+export { Entidades2Repository };

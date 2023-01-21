@@ -1,0 +1,17 @@
+import { Entidade } from "../../entities/Entidade";
+import { IEntidadesRepository } from "../../repositories/interface/IEntidadesRepository;
+
+
+@injectable()
+class ListEntidadesUseCase {
+    construtor (         
+    @inject(EntidadesRepository)
+        private entidadesRepository: IEntidadesRepository) {}
+    async execute(): Promise<Entidade[]> {
+        const entidades = await this.entidadesRepository.list();
+
+        return entidades;
+    }
+}
+
+export { ListEntidadesUseCase };

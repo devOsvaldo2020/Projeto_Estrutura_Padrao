@@ -1,0 +1,23 @@
+// aqui usanos o typeorm pra alterar uma tabela
+
+no up..: digite{
+
+     
+    await queryRunner.addcolumn(
+        "entidades", new TableColumn({
+            name: "avatar",
+            type: "varchar",
+            isNullable: true,
+        })
+    )   
+
+}
+
+
+no drow: digite {
+
+     await queryRunner.dropColumn("entidades", "avatar" )
+}
+
+
+// agora é so da um: >>> yarn typeorm migration:run

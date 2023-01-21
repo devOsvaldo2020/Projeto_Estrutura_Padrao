@@ -1,0 +1,28 @@
+import { Router } from "express";
+import multer from "multer";
+
+import  {CreateEntidade2Controller}  from "../modules/bancoDado/useCases/createEntidade2/CreateEntidade2Controller";
+import { ImportEntidade2Controller} from "../modules/bancoDado/useCases/importEntidade2/ImportEntidade2Controller";
+import { listEntidade2Controller} from "../modules/bancoDado/useCases/listEntidade2";
+
+const entidadesRoutes = Router();
+
+const upload = multer({
+    dest: "./tmp", 
+})
+
+
+const createEntidade2Controller = new CreateEntidade2Controller();
+
+
+entidades2Routes.post("/", createEntidade2Controller.handle);
+
+entidades2Routes.get("/", (request, response) => {
+    return listEntidade2Controller.handle(request, response);
+} );
+
+entidades2Routes.post("/import", upload.single("file"), (request, response) => {
+   return importEntidade2Controller.handle(request, response);
+});
+
+export  { entidades2Routes } ;

@@ -1,0 +1,11 @@
+1 - testes Unitarios
+
+2 - testes de  Integracao
+
+--> routes --> controllers --> useCase --> repository
+<-- repository <-- useCase <-- controllers <-- routes
+
+3- TDD - Test Driven Development
+
+
+

@@ -1,0 +1,11 @@
+import { EntidadesRepository } from "../../repositories/class/EntidadesRepository";
+import { importEntidadesController } from "./importEntidadesController";
+import { importEntidadeUseCase } from "./importEntidadeUseCase";
+
+const entidadesRepository = null;
+
+const importEntidadeUseCase = new importEntidadeUseCase(entidadesRepository);
+
+const importEntidadeController = new importEntidadesController(importEntidadeUseCase); 
+
+export { importEntidadeController};

@@ -1,0 +1,21 @@
+import { container } from "tsyringe";
+
+import { IEntidadesRepository } from "../../modules/bancoDado/repositories/interface/IEntidadesRepository";
+import { IEntidades2Repository } from "../../modules/bancoDado/repositories/interface/IEntidades2Repository";
+
+import { EntidadesRepository } from "../../modules/bancoDado/repositories/class/EntidadesRepository";
+import { Entidades2Repository } from "../../modules/bancoDado/repositories/class/Entidades2Repository";
+
+
+
+// vamos passar a nossa interface para dentro do Singleton 
+// e da um nome para esse nosso registro.
+container.registerSingleton<IEntidadesRepository>(
+    "EntidadesRepository",
+    EntidadesRepository
+)
+container.registerSingleton<IEntidades2Repository>(
+    "Entidades2Repository",
+    Entidades2Repository
+)
+

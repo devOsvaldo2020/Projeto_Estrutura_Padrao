@@ -1,0 +1,28 @@
+import { inject, injectable } from "tsyringe";
+import { EntidadesRepository } from "../../repositories/class/EntidadesRepository";
+import { IEntidadesRepository } from ../repositories/interface/IEntidadesRepository";
+import { AppError } from ../errors/AppError;
+
+interface IRequest {
+    colum1: string;
+    colum2: string;
+}
+
+@injectable()
+class CreateEntidadeUseCase {
+    constructor( 
+        @inject("EntidadesReposiroty")
+        private entidadesRepository: IEntidadesRepository) {}
+
+    async execute( { column1, column2 }: IRequest): Promise<void> {
+        const entidadeAlreadyExists = await this.entidadesRepository.findByName(column1);
+
+        if (entidadeAlreadyExists) {
+            throw new AppError(" Entidade already exists!");
+        }
+
+        await this.entidadesRepository.create({ column1, column2 });
+    }
+}
+
+export { CreateEntidadeUseCase };

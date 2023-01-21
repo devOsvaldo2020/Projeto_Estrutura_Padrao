@@ -1,0 +1,60 @@
+
+
+
+
+
+import { Repository } from "typeorm';
+import ( ICreateEntidadeDTO ) from " ../../dtos/ICreateEntidadeDTO";
+import { Entidade} from "../../entities/Entidade";
+
+import {
+    IEntidadesRepository,
+    ICreateEntidadeDTO,
+ } from "../interface/IEntidadesRepository";
+
+class EntidadesRepository implements IEntidadesRepository{    
+
+    private repository: Repository<Entidade>;
+
+    contructor() {
+        this.repository = getRepository(Entidade);
+    }    
+
+    async create({
+        column2, 
+        column1
+        
+    }: ICreateEntidadeDTO): Promise<void> {
+
+        const entidade = this.repository.create({
+           column2,
+           column1
+        })
+
+        await this.repository.save(entidade)
+    }
+
+    async list(): Promise<Entidade[]> {
+        const entidades = await this.repository.find();
+        return entidades;
+    }
+
+    async findByName(column1: string): Promise<Entidade> {
+        // select * from entidades where column1 = "column1" limit 1 >>> column1 = name <<<
+        const entidade = await this.repository.findOne( { column1 });
+        return entidade;
+    }
+
+//    async findByEmail(columnN: string): Promise<Entidade>{
+//        const entidade = await this.repository.findOne({columnN});
+//        return entidade;
+//   }
+
+    async findById(_id: string ): Promise<entidade>{
+        const entidade = await this.repository.finOne(_id);
+        return entidade;
+    }
+
+}
+
+export { EntidadesRepository };

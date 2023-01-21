@@ -1,0 +1,10 @@
+
+
+interface ICreateEntidade2DTO {
+    column1: string;
+    column2: string;
+    id?: string;
+    avatar?: string;
+}
+
+export { ICreateEntidade2DTO };

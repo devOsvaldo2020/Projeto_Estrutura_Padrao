@@ -1,0 +1,15 @@
+//aqui usamos o typeorm pra deletar uma coluna de uma tabela 
+
+no up: digite {
+    await queryRunner.dropColumn("entidades", "username" )
+}
+
+no dorw: digite {
+
+    await queryRunner.addcolumn(
+        "entidades", new TableColumn({
+            name: "username",
+            type: "varchar",
+        })
+    )
+}

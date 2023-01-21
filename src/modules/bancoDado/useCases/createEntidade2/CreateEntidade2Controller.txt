@@ -1,0 +1,19 @@
+import  { Request, Response} from "express";
+import { container } from "tsyringe";
+
+import { CreateEntidade2UseCase } from "./CreateEntidade2UseCase";
+
+class CreateEntidade2Controller {   
+
+    async handle(request: Request, response: Response): Promise<Response> {
+        const { column1, column2 } =  request.body;
+        
+        const createEntidade2UseCase = container.resolve(CreateEntidade2UseCase)
+        
+        await createEntidade2UseCase.execute({ column1, column2});
+
+        return response.status(201).send();
+    }
+}
+
+export { CreateEntidade2Controller };

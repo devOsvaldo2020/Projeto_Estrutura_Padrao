@@ -1,0 +1,44 @@
+// vai garantir que o usuario que for fazer uma determinada requisicao para uma rota, ele seja um usuario autenticado
+
+
+
+import { NextFunction, Request, Response } from "express";
+import { AppError } from ../errors/AppError;
+import { verify } from "jsonwebtoken";
+import { entidadesRepository } from "../modules/bancoDados/repositories/class/entidadesRepository
+
+interface IPayload {
+    sub: string;
+}
+
+
+export async function ensureAuthenticated( request: Request, response: Response, next: nextFunction ){ 
+    const authHeader = request.header.authorization;  
+
+    if(!authHeader){
+        throw new AppError("Token missing" , 401)
+    }
+
+    const [, token ] = authHeader.split(" ");
+
+    try{
+        const { sub: entidade_id } = verify(token, "7a21a6ec9cbba5b2995985f76edfec5c") as IPayload; // chave-secreta-do-authenticateEntidadeUseCase
+        const entidadesRepository = new entidadesRepository();
+        const entidade = await entidadesRepository.findById(entidade_id);
+
+        if(!entidade){
+            throw new AppError("Entidade does not exists!" , 401)
+        }
+
+        request.entidade = { // entidade = user 
+            id: entidade_id  // entidade = user
+        }
+        
+        next();
+
+    }catch{
+        throw new AppError("invalid token!", 401)
+    }
+
+}
+

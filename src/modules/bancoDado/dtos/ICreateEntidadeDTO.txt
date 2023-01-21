@@ -1,0 +1,8 @@
+
+
+interface ICreateEntidadeDTO {
+    column1: string;
+    column2: string;
+}
+
+export { ICreateEntidadeDTO };

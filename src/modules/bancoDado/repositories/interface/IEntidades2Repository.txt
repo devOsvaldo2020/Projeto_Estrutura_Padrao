@@ -1,0 +1,11 @@
+import ( ICreateEntidade2DTO ) from " ../../dtos/ICreateEntidade2DTO";
+import { Entidade2 } from "./entities/Entidade2";
+
+interface IEntidades2Repository {
+    findByName(column1: string):Promise<Entidade2> ;
+    list(): Promise<Entidade2[]>;
+    
+    create({ column1, column2 }: ICreateEntidade2DTO): Promise<void>
+}
+
+export { IEntidades2Repository };

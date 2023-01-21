@@ -1,0 +1,30 @@
+add os imports
+
+public up...{
+    await queryRunner.createTable{
+        new Table({
+            name: "entidades2",
+            columns: [
+                {
+                    name: "_id",
+                    type: "uuid",
+                    isPrimary: true
+                },
+                {
+                    name: "colum1",
+                    type: "varchar",                    
+                },
+                {
+                    name: "colum2",
+                    type: "varchar",                    
+                },
+                {
+                    name: "created_at",
+                    type: "timestamp",
+                    default: "now()",
+                },
+            ],
+        })
+    }
+}
+

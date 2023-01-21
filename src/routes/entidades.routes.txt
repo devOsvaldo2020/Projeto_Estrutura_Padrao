@@ -1,0 +1,44 @@
+import { Router } from "express";
+import multer from "multer";
+import uploadConfig from "../config/upload";
+
+import { ensureAuthenticated} from "../middlewares/ensureAuthenticated";
+import {CreateEntidadeController}  from "../modules/bancoDado/useCases/createEntidade/CreateEntidadeController";
+import { ImportEntidadeController} from "../modules/bancoDado/useCases/importEntidade/ImportEntidadeController";
+import { ListEntidadeController} from "../modules/bancoDado/useCases/listEntidade/ListEntidadeController";
+import { updateEntidadeAvatarController} from "../modules/bancoDado/useCases/updateEntidadeAvatar/UpdateEntidadeAvatarController";
+
+
+const entidadesRoutes = Router();
+
+const upload = multer({
+    dest: "./tmp", 
+})
+
+const uploadAvatar = multer(uploadConfig.upload("./tmp/avatar"));
+
+
+const createEntidadeController = new CreateEntidadeController();
+const importEntidadeController = new ImportEntidadeController();
+const listEntidadeController = new ListEntidadeController();
+const updateEntidadeAvatarController = new UpdateEntidadeAvatarController();
+
+entidadesRoutes.post("/", createEntidadeController.handle);
+entidadesRoutes.get("/", listEntidadeController.handle);
+
+entidadesRoutes.patch("/avatar", 
+    ensureAuthenticated,
+    uploadAvatar.single("file"),
+    updateEntidadeAvatarController.handle
+ );
+
+entidadesRoutes.post("/import", 
+    upload.single("file"), 
+    importEntidadeController.handle
+);
+
+
+
+
+
+export  { entidadesRoutes } ;

@@ -1,0 +1,32 @@
+import { inject, injectable } from "tsyringe";
+import { EntidadesRepository } from "../../repositories/class/EntidadesRepository";
+import { IEntidadesRepository } from ../repositories/interface/IEntidadesRepository";
+import { IEntidadesRepository } from ../repositories/interface/IEntidadesRepository";
+import { deleteFile } from ../../../../utils/file";
+
+
+interface IRequest {
+    user_id: string;
+    avatar_file: string;    
+}
+
+@injectable()
+class UpdateEntidadeAvatarUseCase{
+    constructor(
+        inject("EntidadesRepository")
+        private entidadesRepository: IEntidadesRepository){}
+    )
+
+    async execute({ user_id, avatar_file } : IRequest ): Promise<void> {
+        const entidade = await this.entidadesRepository.findById(user_id);
+
+        i(!user.avatar){
+        await deleteFile(`./tmp/avatar/${user.avatar} `);
+        }
+        
+        entidade.avatar = avatar_file;
+        await this.entidadesRepository.create(entidade)
+    }
+}
+
+export { UpdateEntidadeAvatarUseCase };

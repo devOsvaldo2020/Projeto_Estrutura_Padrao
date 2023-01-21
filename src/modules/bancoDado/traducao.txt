@@ -1,0 +1,5 @@
+entities = entidades
+repository = repositorio
+services = servicos
+useCase = caso de uso
+bancoDado = ex: cars

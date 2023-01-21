@@ -1,0 +1,18 @@
+// nao precisa mais depois do tsyringe
+
+/*
+import { EntidadesRepository } from "../../repositories/class/EntidadesRepository";
+import { CreateEntidadeController } from "./CreateEntidadeController";
+import { CreateEntidadeUseCase } from "./CreateEntidadeUseCase";
+
+export default(): CreateEntidadesController => {
+    const entidadesRepository = new EntidadesRepository();
+
+    const createEntidadeUseCase = new CreateEntidadeUseCase(entidadesRepository);
+
+    const createEntidadeController = new CreateEntidadeController(
+        createEntidadeUseCase
+    );
+    return createEntidadeController
+};
+*/

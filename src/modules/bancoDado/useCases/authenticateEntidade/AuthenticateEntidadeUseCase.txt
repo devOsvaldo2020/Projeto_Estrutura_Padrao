@@ -1,0 +1,68 @@
+import { IEntidadesRepository } from "../../repositories/interface/IEntidadesRepository";
+import { sign } from "jsonwebtoken";
+import { inject, injectable } from "tsyringe";
+import { AppError } from ../errors/AppError;
+import { compare } from "bcrypt";
+
+
+interface IRequest {
+    columnN: string;
+    columnM: string;
+}
+
+interface IResponse {
+    entidade: {   // user
+        column1: string; // name
+        columnN: string;  // email
+    },
+    token: string;
+}
+
+
+// vai receber o email e senha
+
+@injectable()
+async class AuthenticateEntidadeUseCase{
+
+    constructor(
+        @inject("EntidadeRepository")
+        private entidadesRepository: IEntidadesRepository
+    ){}
+
+
+
+    async execute( { columnN, columnM}: IRequest Promise<IResponse> ){
+        // precisa verificar se usuario (email) existe, se sim
+        const entidade = await this.entidadesRepository.findByEntidade(columnN) // aqui email
+
+        if(!entidade){
+            throw new AppError("Email ou Senha incorreto!", 401)
+        }
+        
+        // verificar se a senha esta correta, se sim
+
+        const passwordMatch = await compare(password, entidade.password); // aqui seria user.password
+
+        if(!passwordMatch){
+            throw new AppError("Email ou Senha incorreto!", 401)
+        }
+        
+        // ai sim gerar o jsonwebtoken
+        const token = sign({}, "7a21a6ec9cbba5b2995985f76edfec5c", {
+            suject: entidade._id,
+            expiresIn: "1d", // assim é um dia.
+        });
+
+        const tokenReturn: IResponse = {
+            token, 
+            entidade: { // user
+                column1: entidade.column1 // name: user.name
+                columnN: entidade.columnN // email: user.email 
+            }, 
+        }
+        return tokenReturn;
+    };
+}
+
+
+export { AuthenticateEntidadeUseCase };

@@ -1,0 +1,16 @@
+
+
+
+import { Router } from "express";
+import  {AuthenticateEntidadeController}  from "../modules/bancoDado/useCases/authenticateEntidade/AuthenticateEntidadeController";
+
+const authenticateRoutes = Router();
+
+const authenticateEntidadeController = new AuthenticateEntidadeController();
+
+authenticateEntidadeController.post("./sessions", authenticateEntidadeController.handle );
+
+export  { authenticateRoutes } ;
+
+
+
