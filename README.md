@@ -276,12 +276,6 @@ yarn add --dev tsconfig-paths
 <hr>
 
 
-
-
-
-
-
-
 <!-- 
 
 ## Biblioteca para 
@@ -302,3 +296,13 @@ yarn
 <hr>
 
  -->
+
+# Requisitos
+
+** Requisitos funcionais **
+
+**RNF** => Requisitos não funcionais
+
+
+
+
