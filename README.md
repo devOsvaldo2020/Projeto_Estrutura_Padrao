@@ -326,10 +326,8 @@ yarn
 <!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
 **RF**
 
-<p>
 - Deve ser possivel cadastrar um novo carro.
 - deve ser possivel listar todas as cartegorias
-</p>
 
 **RNF**
 
