@@ -309,5 +309,114 @@ yarn
 
 - Descricao: As regras de negócio são as regras e políticas estabelecidas pela empresa ou organização para governar as operações e decisões de negócios. Elas descrevem como as tarefas e processos de negócios devem ser realizados, quais são as condições para tomar decisões e como essas decisões afetam os resultados financeiros e outros aspectos do negócio. Elas são geralmente baseadas nas estratégias e objetivos de negócios da empresa e são aplicadas em todos os níveis da organização. Elas podem ser formalmente documentadas ou transmitidas de forma informal, por exemplo, através de treinamento e orientação. As regras de negócio são utilizadas para guiar a tomada de decisão e garantir a consistência no processo de negócios, além de ajudar a mitigar riscos e garantir a conformidade com regulamentos. [fonte](https://chat.openai.com/chat)
 
+<hr>
 
+## cadastro de carro
 
+<!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
+**RF**
+
+- Deve ser possivel cadastrar um novo carro.
+- deve ser possivel listar todas as cartegorias
+
+**RNF**
+
+- null
+
+**RN**
+
+- nao deve ser possivel cadastrar um carro com uma placa ja existente.
+
+- nao deve ser possivel alterar a placa de um carro ja cadastrado.
+
+- o carro deve ser cadastrado como disponibilidade true, como padrao.
+
+- O cadastro deve ser feito pelo user adm.
+
+<hr>
+
+## listagem de carro
+
+<!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
+**RF**
+
+- Deve ser possivel listar todos carros disponiveis.
+- Deve ser possivel listar todos carros disponiveis pela marca.
+- Deve ser possivel listar todos carros disponiveis pela categoria.
+- Deve ser possivel listar todos carros disponiveis pelo nome do carro.
+
+**RNF**
+
+- null
+
+**RN**
+
+- O usuario nao precisa estar logado no sistema.
+
+<hr>
+
+## Cadastro de especificacao no carro
+
+<!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
+**RF**
+
+- Deve ser possivel cadastrar uma especificacao para um carro ou mais carros
+- Deve ser possivel cadastrar varias especificacoes para um carro.
+- Deve ser possivel listar as especificacoes.
+- Deve ser possivel listar os carros.
+
+**RNF**
+
+- null
+
+**RN**
+
+- nao deve ser possivel cadastrar umsa especificacao para um carro nao cadastrado.
+- nao deve ser possivel cadastrar uma mesma especificacao para o mesmo carro.
+- O cadastro deve ser feito por um adm.
+
+<hr>
+
+## Cadastro de imagens do carro
+
+<!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
+**RF**
+
+- Deve ser possivel cadastrar uma imagem ou mais para um carro.
+- Deve ser possivel listar todos os carros.
+
+**RNF**
+
+- utilizar o multer para upload dos arquivos
+
+**RN**
+
+- nao deve ser possivel cadastrar uma imagem para um carro nao cadastrado.
+- nao deve ser possivel cadastrar uma mesma imagem para o mesmo carro.
+- Deve ser possivel cadastrar mais de uma imagem para o mesmo carro.
+- O cadastro deve ser feito por um adm.
+
+<hr>
+
+## Aluguel de carro
+
+<!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
+**RF**
+
+- Deve ser possivel cadastrar um aluguel.
+- Deve ser possivel listar todos os carros.
+
+**RNF**
+
+- utilizar o multer para upload dos arquivos
+
+**RN**
+
+- O aluguel deve ter duracao minima de 24 horas.
+- nao deve ser possivel cadastrar um aluguel para um carro nao disponivel.
+- nao deve ser possivel cadastrar um aluguel para um carro nao cadastrado.
+- nao deve ser possivel cadastrar um aluguel para um carro ja alugado.
+- nao deve ser possivel cadastrar mais de um aluguel para o mesmo cliente.
+- O cadastro deve ser feito por um adm.
+
+<hr>
