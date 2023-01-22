@@ -5,7 +5,7 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from ../errors/AppError;
 import { verify } from "jsonwebtoken";
-import { entidadesRepository } from "../modules/bancoDados/repositories/class/entidadesRepository
+import { entidadesRepository } from "../../../modules/bancoDados/infra/typeorm/repository/class/entidadesRepository";
 
 interface IPayload {
     sub: string;

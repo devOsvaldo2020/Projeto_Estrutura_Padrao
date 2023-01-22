@@ -3,8 +3,8 @@ import { container } from "tsyringe";
 import { IEntidadesRepository } from "../../modules/bancoDado/repositories/interface/IEntidadesRepository";
 import { IEntidades2Repository } from "../../modules/bancoDado/repositories/interface/IEntidades2Repository";
 
-import { EntidadesRepository } from "../../modules/bancoDado/repositories/class/EntidadesRepository";
-import { Entidades2Repository } from "../../modules/bancoDado/repositories/class/Entidades2Repository";
+import { EntidadesRepository } from "../../modules/bancoDado/infra/typeorm/repositories/class/EntidadesRepository";
+import { Entidades2Repository } from "../../modules/bancoDado/infra/typeorm/repositories/class/Entidades2Repository";
 
 
 

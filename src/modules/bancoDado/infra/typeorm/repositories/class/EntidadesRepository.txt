@@ -1,8 +1,5 @@
 
 
-
-
-
 import { Repository } from "typeorm';
 import ( ICreateEntidadeDTO ) from " ../../dtos/ICreateEntidadeDTO";
 import { Entidade} from "../../entities/Entidade";

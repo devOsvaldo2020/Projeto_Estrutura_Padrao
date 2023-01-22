@@ -255,3 +255,50 @@ yarn ts-jest -D
 e ir repondendo as perguntas
 
 <hr>
+
+## Biblioteca para traduzir os imports para o tsconfig
+
+### tsconfig-paths
+
+- Descricao: tsconfig-paths é um pacote npm que permite resolver caminhos de módulo em arquivos TypeScript (tsconfig.json) de forma semelhante a como o Node.js resolve caminhos de módulo com base no arquivo package.json. Ele é útil quando você está usando caminhos relativos para importar módulos em seu código TypeScript, pois permite que você configure esses caminhos uma vez no arquivo tsconfig.json e os use em todo o seu projeto. Além disso, ele também permite a você usar caminhos de módulo baseados em alias, o que pode tornar seu código mais legível e fácil de manter. [fonte](https://chat.openai.com/chat)
+
+👉 [tsconfig-paths -npm](https://www.npmjs.com/package/tsconfig-paths).
+
+```jsx
+npm install --save-dev tsconfig-paths
+
+yarn add tsconfig-paths -D
+
+yarn add --dev tsconfig-paths
+
+```
+
+<hr>
+
+
+
+
+
+
+
+
+<!-- 
+
+## Biblioteca para 
+
+### 
+
+- Descricao: [fonte](https://chat.openai.com/chat)
+
+👉 []().
+
+```jsx
+npm 
+
+yarn
+
+```
+
+<hr>
+
+ -->

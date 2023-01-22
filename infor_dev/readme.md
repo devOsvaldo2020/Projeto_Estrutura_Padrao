@@ -18,3 +18,9 @@
 9- att a rota
 
 10- att o server
+
+## Atalhos vscode
+
+ctrl + shitf + p = reload o vscode
+
+ctrl + spaco = chama os imports
