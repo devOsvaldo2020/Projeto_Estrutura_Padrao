@@ -297,10 +297,17 @@ yarn
 
 # Requisitos
 
-**Requisitos funcionais**
+**RF** => Requisitos funcionais
+
+- Descricao: Os requisitos funcionais são especificações que descrevem as funcionalidades e características de um sistema, produto ou serviço. Eles incluem informações sobre o que o sistema deve fazer, como ele deve fazê-lo e os resultados esperados. Esses requisitos são geralmente expressos em termos do usuário e são usados ​​como base para o desenvolvimento de software, projetos de engenharia e outros projetos. Eles são geralmente documentados em um documento chamado "Especificação de Requisitos" e são revisados ​​e aprovados pelos stakeholders antes do início do desenvolvimento. [fonte](https://chat.openai.com/chat)
 
 **RNF** => Requisitos não funcionais
 
+- Descricao: Os requisitos não funcionais são especificações que descrevem as características de um sistema, produto ou serviço que não se relacionam diretamente com suas funcionalidades. Eles incluem informações sobre desempenho, escalabilidade, segurança, usabilidade, compatibilidade, conformidade e outras características importantes que afetam o uso e a operação do sistema. Esses requisitos são geralmente expressos em termos técnicos e são usados ​​como base para o desenvolvimento de software, projetos de engenharia e outros projetos. Eles são geralmente documentados em um documento chamado "Especificação de Requisitos" e são revisados ​​e aprovados pelos stakeholders antes do início do desenvolvimento. [fonte](https://chat.openai.com/chat)
+
+**RN** => Regra de negócio
+
+- Descricao: As regras de negócio são as regras e políticas estabelecidas pela empresa ou organização para governar as operações e decisões de negócios. Elas descrevem como as tarefas e processos de negócios devem ser realizados, quais são as condições para tomar decisões e como essas decisões afetam os resultados financeiros e outros aspectos do negócio. Elas são geralmente baseadas nas estratégias e objetivos de negócios da empresa e são aplicadas em todos os níveis da organização. Elas podem ser formalmente documentadas ou transmitidas de forma informal, por exemplo, através de treinamento e orientação. As regras de negócio são utilizadas para guiar a tomada de decisão e garantir a consistência no processo de negócios, além de ajudar a mitigar riscos e garantir a conformidade com regulamentos. [fonte](https://chat.openai.com/chat)
 
 
 
