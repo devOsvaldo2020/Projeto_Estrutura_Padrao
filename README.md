@@ -23,7 +23,7 @@ yarn add @types/multer -D
 
 <hr>
 
-👉 [CSV Parse API](https://www.npmjs.com/package/csv-parse)
+## 👉 [CSV Parse API](https://www.npmjs.com/package/csv-parse)
 
 - Descricao: Um "CSV Parse API" é uma API (Application Programming Interface) que fornece a capacidade de analisar arquivos CSV (Comma Separated Values) e transformá-los em um formato de dados mais fácil de trabalhar, como JSON. Isso permite que aplicativos consumam e trabalhem com dados em arquivos CSV de forma fácil e eficiente.
 
@@ -41,7 +41,7 @@ yarn add csv-parse
 
 <hr>
 
-[Swagger](https://swagger.io/)
+## 👉 [Swagger](https://swagger.io/)
 
 - Descricao: Swagger é uma ferramenta que permite a criação e documentação de APIs RESTful. Ele é composto por uma especificação, que define como as APIs devem ser estruturadas e documentadas, e uma série de ferramentas de desenvolvimento, que permitem a criação, teste e interação com APIs. A especificação Swagger é compatível com várias plataformas e linguagens de programação, tornando-a uma escolha popular para desenvolvimento de API. Ele também tem uma interface visual, chamada Swagger UI, onde os desenvolvedores podem experimentar e testar as chamadas da API. [fonte](https://chat.openai.com/chat).
 
@@ -85,7 +85,9 @@ docker exec nome_do_container cat /etc/hosts
 
 ```
 
-## 👉 docker-compose  
+<hr>
+
+## 👉 docker-compose
 
 ```jsx
 docker-compose up
@@ -102,9 +104,11 @@ docker-compose up --force-recreate
 
 ```
 
+<hr>
+
 ## 👉 banco de dados ORMs
 
-- pasta database na raiz é onde vai ficar o banco.
+- Pasta database na raiz é onde vai ficar o banco.
 
 - Descricao: TypeORM é uma biblioteca ORM (Object-Relational Mapping) para TypeScript e JavaScript. Ele permite que você trabalhe com banco de dados relacionais usando objetos JavaScript ou TypeScript, em vez de escrever consultas SQL manualmente. Ele suporta vários bancos de dados populares, como MySQL, PostgreSQL, SQLite e Microsoft SQL Server.
 
@@ -112,7 +116,7 @@ docker-compose up --force-recreate
 
 - TypeORM é uma boa escolha para projetos que precisam de uma camada de abstração do banco de dados e suporte para TypeScript. Ele é amplamente utilizado em projetos Node.js e pode ser facilmente integrado com frameworks como Express e NestJS. [fonte](https://chat.openai.com/chat).
 
- 👉 [typeORM](https://typeorm.io/)
+## 👉 [typeORM](https://typeorm.io/)
 
 ```jsx
     yarn typeorm migration:create -n CreateEntidade
@@ -124,13 +128,15 @@ docker-compose up --force-recreate
 
 ```
 
+<hr>
+
 ## injeção de dependência
 
 ### TSyringa
 
 - Descricao: TSyringe é uma biblioteca de injeção de dependência para TypeScript disponível no npm (Gerenciador de Pacotes Node). Ele fornece uma forma fácil e eficiente de gerenciar as dependências em aplicativos TypeScript, incluindo a capacidade de gerenciar dependências singleton e transientes. Ele também oferece suporte para construtores com múltiplos parâmetros e pode ser usado com qualquer framework JavaScript. A biblioteca TSyringe é mantida por uma comunidade ativa e é frequentemente atualizada para incluir novos recursos e correções de bugs [fonte](https://chat.openai.com/chat).
 
-👉 [TSyringe](https://www.npmjs.com/package/tsyringe?activeTab=readme)
+## 👉 [TSyringe](https://www.npmjs.com/package/tsyringe?activeTab=readme)
 
 ```jsx
 npm install --save tsyringe
@@ -139,13 +145,15 @@ yarn add tsyringe
 
 ```
 
+<hr>
+
 ## Biblioteca para criptografar as senhas
 
 ### Bcrypt
 
 - Descricao: bcrypt é uma biblioteca de criptografia de senhas de fluxo de trabalho de hash de senha baseado em Blowfish. Ele é projetado para ser mais seguro do que outras bibliotecas de hash de senha, como o MD5 ou SHA-1, pois utiliza uma "custo" (cost) para aumentar o tempo de processamento e aumentar a segurança. A ideia é que, quanto maior o custo, mais difícil será para um atacante quebrar a senha criptografada. Outra vantagem do bcrypt é que ele gera uma "salt" (sal) aleatória para cada senha, o que significa que mesmo que duas senhas sejam iguais, as senhas criptografadas serão diferentes. Bcrypt é amplamente utilizado em aplicações web para armazenar senhas de forma segura e é uma boa escolha para aplicações que precisam de alta segurança. [fonte](https://chat.openai.com/chat)
 
-👉 [bcrypt](https://www.npmjs.com/package/bcrypt)
+## 👉 [bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ```jsx
 npm install bcript
@@ -169,7 +177,7 @@ yarn add @types/bcript -D
 
 - Descricao: Um token JSON Web (JWT) é um padrão aberto (RFC 7519) que define uma maneira de transmitir de maneira segura e confiável as informações entre as partes como um objeto JSON. Ele consiste em três partes: cabeçalho, payload (conteúdo) e assinatura. O cabeçalho geralmente contém informações sobre o tipo de token e o algoritmo usado para assinar o token. O payload contém as informações de usuário, como o nome de usuário e papel do usuário. A assinatura é usada para garantir que o remetente do token é confiável e que o conteúdo do token não foi alterado durante a transmissão. JWT é amplamente utilizado em autenticação e autorização em aplicativos web e mobile.[fonte](https://chat.openai.com/chat)
 
-👉 [JWT](https://jwt.io/)
+## 👉 [JWT](https://jwt.io/)
 
 ### JSONWEBTOKEN
 
@@ -189,9 +197,11 @@ yarn add @types/jsonwebtoken -D
 
 ```
 
+<hr>
+
 ### Gerador de MD5 hash
 
-👉[MD5 qualquer](https://www.md5hashgenerator.com/)
+## 👉[MD5 qualquer](https://www.md5hashgenerator.com/)
 
 ex: gerarummd5teste
 
@@ -208,7 +218,7 @@ saida: 7a21a6ec9cbba5b2995985f76edfec5c
  garante que elas sejam tratadas corretamente. Isso ajuda a evitar que erros críticos sejam ignorados e causem falhas no aplicativo.
  [fonte](https://chat.openai.com/chat)
 
-👉 [express-async-errors](https://www.npmjs.com/package/express-async-errors)
+## 👉 [express-async-errors](https://www.npmjs.com/package/express-async-errors)
 
 ```jsx
 npm install express-async-errors --save
@@ -231,7 +241,7 @@ yarn add express-async-errors
    pode ser usado com vários tipos de projetos, incluindo projetos Node.js e projetos de aplicativos
    web.[fonte](https://chat.openai.com/chat)
 
-👉 [JEST](https://jestjs.io/pt-BR/docs/getting-started).
+## 👉 [JEST](https://jestjs.io/pt-BR/docs/getting-started).
 
 ```jsx
 npm install --save-dev jest
@@ -260,7 +270,7 @@ e ir repondendo as perguntas
 
 - Descricao: tsconfig-paths é um pacote npm que permite resolver caminhos de módulo em arquivos TypeScript (tsconfig.json) de forma semelhante a como o Node.js resolve caminhos de módulo com base no arquivo package.json. Ele é útil quando você está usando caminhos relativos para importar módulos em seu código TypeScript, pois permite que você configure esses caminhos uma vez no arquivo tsconfig.json e os use em todo o seu projeto. Além disso, ele também permite a você usar caminhos de módulo baseados em alias, o que pode tornar seu código mais legível e fácil de manter. [fonte](https://chat.openai.com/chat)
 
-👉 [tsconfig-paths -npm](https://www.npmjs.com/package/tsconfig-paths).
+## 👉 [tsconfig-paths -npm](https://www.npmjs.com/package/tsconfig-paths).
 
 ```jsx
 npm install --save-dev tsconfig-paths
@@ -316,8 +326,10 @@ yarn
 <!-- id, nome, descricao, valor_diaria, disponivel, multa, marca -->
 **RF**
 
+<p>
 - Deve ser possivel cadastrar um novo carro.
 - deve ser possivel listar todas as cartegorias
+</p>
 
 **RNF**
 
