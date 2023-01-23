@@ -433,6 +433,7 @@ yarn
 
 ## Mapa do projeto
 
+```jsx
 Projeto_Locadora_de_veiculo-rocketseat
 ├── src
 │ ├── @types
@@ -527,5 +528,5 @@ Projeto_Locadora_de_veiculo-rocketseat
 ├── package.json            // dependências do módulo do nó
 ├── README.md               // arquivo readme simples
 └── tsconfig.json           // Opções do compilador TypeScript
-
+```
 <hr>
