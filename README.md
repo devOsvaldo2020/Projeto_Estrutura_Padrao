@@ -430,3 +430,102 @@ yarn
 - O cadastro deve ser feito por um adm.
 
 <hr>
+
+## Mapa do projeto
+
+Projeto_Locadora_de_veiculo-rocketseat
+├── src
+│ ├── @types
+│ │ └── express
+│ │   └── index.d.ts
+│ ├── config
+│ │ └── upload.ts
+│ ├── modules
+│ │ ├── accounts
+│ | ├── cars
+| │ | ├── dtos
+| │ | | ├── ICreateCarDTO.ts
+| │ | | ├── ICreateCategoryDTO.ts
+| │ | | └── ICreateSpecificationDTO.ts
+| │ | ├── infra
+| │ | | └── typeorm
+| │ | |   ├── entities
+| │ | |   | ├── Car.ts
+| │ | |   | ├── Category.ts
+| │ | |   | └── Specification.ts
+| | │ |   └── repositories
+| | │ |     ├── CarsRepository.ts
+| │ | |     ├── CategoriesRepository.ts
+| │ | |     └── SpecificationRepository.ts
+| │ | ├── repositories
+| │ | | ├── in-memory
+| │ | | | ├── CarsRepositoryInMemory.ts
+| | │ | | └── CategoriesRepositoryInMemory.ts
+| │ | | ├── CarsRepository.ts
+| │ | | ├── CategoriesRepository.ts
+| │ | | └── SpecificationRepository.ts
+| │ | ├── useCase
+| │ | | ├── authenticateEntidade
+| │ | | | ├── AuthenticateCategoryController.ts
+| | │ | | └── AuthenticateCategoryUseCase.ts
+| │ | | ├── createCar
+| │ | | | ├── CreateCarController.ts
+| │ | | | ├── CreateCarUseCase.spec.ts
+| | │ | | └── CreateCarUseCase.ts
+| │ | | ├── createCategory
+| │ | | | ├── CreateCategoryController.ts
+| │ | | | ├── CreateCategoryUseCase.spec.ts
+| | │ | | └── CreateCategoryUseCase.ts
+| │ | | ├── listCategories
+| │ | | | ├── ListCategoryController.ts
+| | │ | | └── ListCategoryUseCase.ts
+| │ | | ├── updateCategory
+| │ | | | ├── UpdateCategoryAvatarController.ts
+| | │ | | └── UpdateCategoryAvatarUseCase.ts
+| │ | | └── importCategory
+| │ | |   ├── IportCategoryController.ts
+| | │ |   └── IportCategoryUseCase.ts
+| │ | └── traducao.txt
+│ | └── users
+│ ├── shared
+│ | ├── container
+│ │ │ └── index.ts
+│ | ├── errors
+│ │ │ └── AppError.ts
+│ | ├── infra
+│ │ | ├── html
+| │ | | ├── middleware
+| │ | | | └── ensureAuthenticated.ts
+| │ | | ├── routes
+| │ | | | ├── authenticate.routes.ts
+| │ | | | ├── categories.routes.ts
+| │ | | | ├── specification.routes.ts
+| │ | | | └── index.ts
+| │ | | └── server.ts
+| │ | └── typeorm
+| │ |   ├── migration
+| │ |   | ├── entidade
+| | │   | | ├── AlterEntidadeAddAvatar.ts
+| | │   | | └── AlterEntidadeDeleteUserName.ts
+| │ |   | ├── entidade2
+| | │   | | ├── AlterEntidadeAddAvatar.ts
+| | │   | | └── AlterEntidadeDeleteUserName.ts
+| │ |   | ├── tb_cars
+| │ |   | └── tb_category.ts
+│ | |   └── index.ts
+│ | └── leia-me.txt
+| ├── Sql
+│ | ├── arquivo.csv
+│ | └── arquivo2.csv
+| ├── utils
+│ | └── file.ts
+| └── swagger.json
+├── temp
+│ └── avatar
+├── .gitignore              // arquivo gitignore padrão
+├── ormconfig.json          // arquivo de configuracao do orm
+├── package.json            // dependências do módulo do nó
+├── README.md               // arquivo readme simples
+└── tsconfig.json           // Opções do compilador TypeScript
+
+<hr>
